@@ -23,7 +23,6 @@ class EstacionController extends BaseController
     public function registrarVcubs(Request $request, $estacionId) {
         $input = $request->getContent();
         $json = json_decode($input);
-        echo $json[0];
         return "OK $estacionId";
     }
 }
