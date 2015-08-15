@@ -15,9 +15,23 @@ $app->get('/', function () use ($app) {
     return $app->welcome();
 });
 
+$app->group(['prefix' => 'usuario/{usuarioId}', 'namespace'=>'App\Http\Controllers'], function ($app) {
+    $app->get('verEstado/{id}','UsuarioController@verEstado');
+    $app->post('solicitarMobibus/{lat}/{long}', 'UsuarioController@solicitarMobibus');
+});
+
 $app->group(['prefix' => 'estacion/{estacionId}', 'namespace'=> 'App\Http\Controllers'], function ($app) {
     $app->get('pedirLlenado', 'EstacionController@pedirLlenado');
     $app->get('prestarVcub/{id}', 'EstacionController@prestarVcub');
     $app->get('recibirVcub/{id}', 'EstacionController@recibirVcub');
     $app->post('registrarVcubs', 'EstacionController@registrarVcubs');
+});
+
+$app->group(['prefix' => 'tranvia', 'namespace'=> 'App\Http\Controllers'], function ($app)
+{
+    $app->get('{id}', 'TranviaController@showInfo');
+    $app->post('{id}/emergencia', 'TranviaController@reportarEmergencia');
+    $app->post('{id}/reportarPosicion', 'TranviaController@reportarPosicion');
+
+
 });
