@@ -16,10 +16,8 @@ $app->get('/', function () use ($app) {
 });
 
 $app->group(['prefix' => 'usuario/{usuarioId}', 'namespace'=>'App\Http\Controllers'], function ($app) {
-
-    $app->get('/','UsuarioController@darUsuario');
     $app->get('verEstado/{id}','UsuarioController@verEstado');
-    $app->get('solicitarMobibus/{lat}/{long}', 'UsuarioController@solicitarMobibus');
+    $app->post('solicitarMobibus/{lat}/{long}', 'UsuarioController@solicitarMobibus');
 });
 
 $app->group(['prefix' => 'estacion/{estacionId}', 'namespace'=> 'App\Http\Controllers'], function ($app) {
@@ -27,5 +25,4 @@ $app->group(['prefix' => 'estacion/{estacionId}', 'namespace'=> 'App\Http\Contro
     $app->get('prestarVcub/{id}', 'EstacionController@prestarVcub');
     $app->get('recibirVcub/{id}', 'EstacionController@recibirVcub');
     $app->post('registrarVcubs', 'EstacionController@registrarVcubs');
-
 });
