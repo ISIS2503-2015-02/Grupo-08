@@ -26,3 +26,12 @@ $app->group(['prefix' => 'estacion/{estacionId}', 'namespace'=> 'App\Http\Contro
     $app->get('recibirVcub/{id}', 'EstacionController@recibirVcub');
     $app->post('registrarVcubs', 'EstacionController@registrarVcubs');
 });
+
+$app->group(['prefix' => 'tranvia', 'namespace'=> 'App\Http\Controllers'], function ($app)
+{
+    $app->get('{id}', 'TranviaController@showInfo');
+    $app->post('{id}/emergencia', 'TranviaController@reportarEmergencia');
+    $app->post('{id}/reportarPosicion', 'TranviaController@reportarPosicion');
+
+
+});
