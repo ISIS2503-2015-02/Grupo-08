@@ -15,23 +15,17 @@ $app->get('/', function () use ($app) {
     return $app->welcome();
 });
 
-$app->group(['prefix' => 'usuario'], function ($app) {
+$app->group(['prefix' => 'usuario/{usuarioId}', 'namespace'=>'App\Http\Controllers'], function ($app) {
 
-    $app->get('', function ($usuario_id)  {
-        // Matches The "/usuario/id" URL
-    });
+    $app->get('/','UsuarioController@darUsuario');
+    $app->get('verEstado/{id}','UsuarioController@verEstado');
+    $app->get('solicitarMobibus/{lat}/{long}', 'UsuarioController@solicitarMobibus');
+});
 
-    $app->get('verEstado',function ($usuario_id){
-        // Matches The usuario/{usuario_id}/verEstado URL
-    });
-
-    $app->post('solicitarMobibus', function ($usuario_id)  {
-        // Matches The usuario/{usuario_id}/solicitarMobibus URL
-    });
-
-
-
-
-
+$app->group(['prefix' => 'estacion/{estacionId}', 'namespace'=> 'App\Http\Controllers'], function ($app) {
+    $app->get('pedirLlenado', 'EstacionController@pedirLlenado');
+    $app->get('prestarVcub/{id}', 'EstacionController@prestarVcub');
+    $app->get('recibirVcub/{id}', 'EstacionController@recibirVcub');
+    $app->post('registrarVcubs', 'EstacionController@registrarVcubs');
 
 });
