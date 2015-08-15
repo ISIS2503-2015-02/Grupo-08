@@ -14,3 +14,24 @@
 $app->get('/', function () use ($app) {
     return $app->welcome();
 });
+
+$app->group(['prefix' => 'usuario'], function ($app) {
+
+    $app->get('', function ($usuario_id)  {
+        // Matches The "/usuario/id" URL
+    });
+
+    $app->get('verEstado',function ($usuario_id){
+        // Matches The usuario/{usuario_id}/verEstado URL
+    });
+
+    $app->post('solicitarMobibus', function ($usuario_id)  {
+        // Matches The usuario/{usuario_id}/solicitarMobibus URL
+    });
+
+
+
+
+
+
+});
