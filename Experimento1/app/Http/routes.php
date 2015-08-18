@@ -35,3 +35,11 @@ $app->group(['prefix' => 'tranvia', 'namespace'=> 'App\Http\Controllers'], funct
 
 
 });
+
+$app->group(['prefix' => 'mobibus/{mobibusId}', 'namespace' => 'App\Http\Controllers'], function ($app)
+{
+   $app->get('MobibusControllet@showInformacion'); 
+   $app->post('reportarPosicion', 'MobibusController@reportarPosicionActual');
+   $app->post('ocupacion', 'MobibusController@reportarOcupacion');
+    
+});
