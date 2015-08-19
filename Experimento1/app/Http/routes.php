@@ -31,12 +31,10 @@ $app->group(['prefix' => 'tranvia/{id}', 'namespace'=> 'App\Http\Controllers'], 
     $app->get('/', 'TranviaController@showInfo');
     $app->post('/emergencia', 'TranviaController@reportarEmergencia');
     $app->post('/reportarPosicion', 'TranviaController@reportarPosicion');
-
-
 });
 
 $app->group(['prefix' => 'mobibus/{mobibusId}', 'namespace' => 'App\Http\Controllers'], function ($app) {
-   $app->get('/', 'MobibusControllet@showInformacion');
+   $app->get('/', 'MobibusController@showInformacion');
    $app->post('reportarPosicion', 'MobibusController@reportarPosicionActual');
    $app->post('ocupacion', 'MobibusController@reportarOcupacion');
     

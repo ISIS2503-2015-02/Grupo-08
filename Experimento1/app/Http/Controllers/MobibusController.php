@@ -8,12 +8,11 @@ use Illuminate\Http\Request;
 
 class MobibusController extends BaseController
 {
-    public function showInformacion ($id)
-    {
+    public function showInformacion($id) {
         return "Informacion Mobibus $id";
     }
-    public function reportarPosicionActual(Request $request, $id)
-    {
+
+    public function reportarPosicionActual(Request $request, $id) {
        $input = $request->getContent();
        $json = json_decode($input);
        echo $json[0];
@@ -21,8 +20,8 @@ class MobibusController extends BaseController
        
        return "se envia info de Mobibus $id";
     }
-    public function reportarOcupacion(Request $request, $id)
-    {
+
+    public function reportarOcupacion(Request $request, $id) {
        $input = $request->getContent();
        $json = json_decode($input);
        echo $json[0];
