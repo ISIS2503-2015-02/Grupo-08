@@ -13,7 +13,7 @@ class TranviaController extends Controller
         return "info tranvia $id";
     }
 
-    public function reportarPosicion ($id, Request $request)
+    public function reportarPosicion (Request $request, $id)
     {
         $input = $request->getContent();
         $json = json_decode($input);
@@ -23,7 +23,7 @@ class TranviaController extends Controller
         return "Se envia info de tranvia $id";
     }
 
-    public function reportarEmergencia ($id, Request $request)
+    public function reportarEmergencia (Request $request, $id)
     {
         $input = $request->getContent();
         $json = json_decode($input);

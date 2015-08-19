@@ -12,7 +12,7 @@ class MobibusController extends BaseController
     {
         return "Informacion Mobibus $id";
     }
-    public function reportarPosicionActual($id, Request $request)
+    public function reportarPosicionActual(Request $request, $id)
     {
        $input = $request->getContent();
        $json = json_decode($input);
@@ -21,7 +21,7 @@ class MobibusController extends BaseController
        
        return "se envia info de Mobibus $id";
     }
-    public function reportarOcupacion($id, Request $request)
+    public function reportarOcupacion(Request $request, $id)
     {
        $input = $request->getContent();
        $json = json_decode($input);
