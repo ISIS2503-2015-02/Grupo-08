@@ -21,10 +21,10 @@ $app->group(['prefix' => 'usuario/{usuarioId}', 'namespace'=>'App\Http\Controlle
 });
 
 $app->group(['prefix' => 'estacion/{estacionId}', 'namespace'=> 'App\Http\Controllers'], function ($app) {
-    $app->get('pedirLlenado', 'EstacionController@pedirLlenado');
-    $app->get('prestarVcub/{id}', 'EstacionController@prestarVcub');
-    $app->get('recibirVcub/{id}', 'EstacionController@recibirVcub');
-    $app->post('registrarVcubs', 'EstacionController@registrarVcubs');
+    $app->post('pedirLlenado', 'EstacionController@pedirLlenado');
+    $app->put('prestarVcub/{id}', 'EstacionController@prestarVcub');
+    $app->put('recibirVcub/{id}', 'EstacionController@recibirVcub');
+    $app->put('registrarVcubs', 'EstacionController@registrarVcubs');
 });
 
 $app->group(['prefix' => 'tranvia/{id}', 'namespace'=> 'App\Http\Controllers'], function ($app) {
