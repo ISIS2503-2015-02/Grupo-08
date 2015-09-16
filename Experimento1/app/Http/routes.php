@@ -21,6 +21,7 @@ $app->group(['prefix' => 'usuario/{usuarioId}', 'namespace'=>'App\Http\Controlle
 });
 
 $app->group(['prefix' => 'estacion/{estacionId}', 'namespace'=> 'App\Http\Controllers'], function ($app) {
+    $app->get('/', 'EstacionController@showInfo');
     $app->post('pedirLlenado', 'EstacionController@pedirLlenado');
     $app->put('prestarVcub/{id}', 'EstacionController@prestarVcub');
     $app->put('recibirVcub/{id}', 'EstacionController@recibirVcub');

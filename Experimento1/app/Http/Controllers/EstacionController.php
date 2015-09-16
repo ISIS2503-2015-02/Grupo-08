@@ -6,8 +6,13 @@ use Laravel\Lumen\Routing\Controller as BaseController;
 
 use Illuminate\Http\Request;
 
-class EstacionController extends BaseController
-{
+class EstacionController extends BaseController {
+
+    public function showInfo ($estacionId) {
+        $estacion = \App\Estacion::find($estacionId);
+        return json_encode($estacion);
+    }
+
     public function pedirLlenado($estacionId) {
         $estacion = \App\Estacion::find($estacionId);
 
