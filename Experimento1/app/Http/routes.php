@@ -29,8 +29,8 @@ $app->group(['prefix' => 'estacion/{estacionId}', 'namespace'=> 'App\Http\Contro
 
 $app->group(['prefix' => 'tranvia/{id}', 'namespace'=> 'App\Http\Controllers'], function ($app) {
     $app->get('/', 'TranviaController@showInfo');
-    $app->post('/emergencia', 'TranviaController@reportarEmergencia');
-    $app->post('/reportarPosicion', 'TranviaController@reportarPosicion');
+    $app->post('emergencia', 'TranviaController@reportarEmergencia');
+    $app->post('reportarPosicion', 'TranviaController@reportarPosicion');
 });
 
 $app->group(['prefix' => 'mobibus/{mobibusId}', 'namespace' => 'App\Http\Controllers'], function ($app) {
