@@ -13,11 +13,4 @@ class Mobibus extends Model {
      */
     protected $table = 'mobibus';
 
-    /**
-     * Indicates if the model should be timestamped.
-     *
-     * @var bool
-     */
-    public $timestamps = false;
-
 }

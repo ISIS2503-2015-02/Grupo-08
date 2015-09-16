@@ -13,11 +13,4 @@ class Estacion extends Model {
      */
     protected $table = 'estaciones';
 
-    /**
-     * Indicates if the model should be timestamped.
-     *
-     * @var bool
-     */
-    public $timestamps = false;
-
 }

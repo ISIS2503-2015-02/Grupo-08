@@ -13,11 +13,4 @@ class Tranvia extends Model {
      */
     protected $table = 'tranvias';
 
-    /**
-     * Indicates if the model should be timestamped.
-     *
-     * @var bool
-     */
-    public $timestamps = false;
-
 }
