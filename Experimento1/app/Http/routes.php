@@ -22,7 +22,7 @@ $app->group(['prefix' => 'usuario/{usuarioId}', 'namespace'=>'App\Http\Controlle
 
 $app->group(['prefix' => 'estacion/{estacionId}', 'namespace'=> 'App\Http\Controllers'], function ($app) {
     $app->get('/', 'EstacionController@showInfo');
-    $app->post('pedirLlenado', 'EstacionController@pedirLlenado');
+    $app->put('pedirLlenado', 'EstacionController@pedirLlenado');
     $app->put('prestarVcub/{id}', 'EstacionController@prestarVcub');
     $app->put('recibirVcub/{id}', 'EstacionController@recibirVcub');
     $app->put('registrarVcubs', 'EstacionController@registrarVcubs');
@@ -30,13 +30,13 @@ $app->group(['prefix' => 'estacion/{estacionId}', 'namespace'=> 'App\Http\Contro
 
 $app->group(['prefix' => 'tranvia/{id}', 'namespace'=> 'App\Http\Controllers'], function ($app) {
     $app->get('/', 'TranviaController@showInfo');
-    $app->post('emergencia', 'TranviaController@reportarEmergencia');
-    $app->post('reportarPosicion', 'TranviaController@reportarPosicion');
+    $app->put('emergencia', 'TranviaController@reportarEmergencia');
+    $app->put('reportarPosicion', 'TranviaController@reportarPosicion');
 });
 
 $app->group(['prefix' => 'mobibus/{mobibusId}', 'namespace' => 'App\Http\Controllers'], function ($app) {
    $app->get('/', 'MobibusControllercd @showInformacion');
-   $app->post('reportarPosicion', 'MobibusController@reportarPosicionActual');
-   $app->post('ocupacion', 'MobibusController@reportarOcupacion');
+   $app->put('reportarPosicion', 'MobibusController@reportarPosicionActual');
+   $app->put('ocupacion', 'MobibusController@reportarOcupacion');
     
 });
