@@ -10,27 +10,27 @@ class TranviaController extends Controller
 
     public function showInfo ($id)
     {
-        return "info tranvia $id";
+        $tranvia = \App\Tranvia::find($id);
+        return json_encode($tranvia);
     }
 
     public function reportarPosicion (Request $request, $id)
     {
-        $input = $request->getContent();
-        $json = json_decode($input);
-        echo $json[0];
-        echo "\n";
-        
-        return "Se envia info de tranvia $id";
+        $input = json_decode($request->getContent(), true);
+        $tranvia = \App\Tranvia::find($id);
+        $tranvia->posicion = $input["posicion"];
+        $tranvia->save();
+
+        return ["estado"=>"OK","mensaje"=>"Se ha actualizado la posición del tranvia"];
     }
 
-    public function reportarEmergencia (Request $request, $id)
+    public function reportarEmergencia ($id)
     {
-        $input = $request->getContent();
-        $json = json_decode($input);
-        echo $json[0];
-        echo "\n";
+        $tranvia = \App\Tranvia::find($id);
+        $tranvia->emergencia = true;
+        $tranvia->save();
 
-        return "Emergencia de tranvia $id" ;
+        return ["estado"=>"OK","mensaje"=>"Se ha reportado la emergencia"];
     }
 
 }

@@ -9,24 +9,25 @@ use Illuminate\Http\Request;
 class MobibusController extends BaseController
 {
     public function showInformacion($id) {
-        return "Informacion Mobibus $id";
+        $mobibus = \App\Mobibus::find($id);
+        return json_encode($mobibus);
     }
 
     public function reportarPosicionActual(Request $request, $id) {
-       $input = $request->getContent();
-       $json = json_decode($input);
-       echo $json[0];
-       echo "\n";
-       
-       return "se envia info de Mobibus $id";
+        $input = json_decode($request->getContent(), true);
+        $mobibus = \App\Mobibus::find($id);
+        $mobibus->posicion = $input["posicion"];
+        $mobibus->save();
+
+        return ["estado"=>"OK","mensaje"=>"Se ha actualizado la posición del mobibus"];
     }
 
     public function reportarOcupacion(Request $request, $id) {
-       $input = $request->getContent();
-       $json = json_decode($input);
-       echo $json[0];
-       echo "\n";
-       
-       return "La ocupacion del Mobibus $id";
+        $input = json_decode($request->getContent(), true);
+        $mobibus = \App\Mobibus::find($id);
+        $mobibus->posicion = $input["ocupacion"];
+        $mobibus->save();
+
+        return ["estado"=>"OK","mensaje"=>"Se ha actualizado la ocupación del mobibus"];
     }
 }

@@ -9,20 +9,45 @@ use Illuminate\Http\Request;
 class EstacionController extends BaseController
 {
     public function pedirLlenado($estacionId) {
+        $estacion = \App\Estacion::find($estacionId);
+
+        $estacion->llenar = true;
+
+        $estacion->save();
+
         return ["estado"=>"OK", "mensaje"=>"Se ha solicitado el llenado"];
     }
 
     public function prestarVcub($estacionId, $vcubId) {
-        return "OK $estacionId $vcubId";
+        $estacion = \App\Estacion::find($estacionId);
+
+        $estacion->disponibles = $estacion->disponibles-1;
+
+        $estacion->save();
+
+        return ["estado"=>"OK", "mensaje"=>"Se ha prestado el VCUB $vcubId"];
     }
 
     public function recibirVcub($estacionId, $vcubId) {
-        return "OK $estacionId $vcubId";
+        $estacion = \App\Estacion::find($estacionId);
+
+        $estacion->disponibles = $estacion->disponibles+1;
+
+        $estacion->save();
+
+        return ["estado"=>"OK", "mensaje"=>"Se ha recibido el VCUB $vcubId"];
     }
 
     public function registrarVcubs(Request $request, $estacionId) {
         $input = $request->getContent();
         $json = json_decode($input);
-        return "OK $estacionId";
+
+        $estacion = \App\Estacion::find($estacionId);
+
+        $estacion->disponibles = $estacion->disponibles+sizeof($json);
+
+        $estacion->save();
+
+        return ["estado"=>"OK", "mensaje"=>"Se han recibido los VCUBs"];
     }
 }
