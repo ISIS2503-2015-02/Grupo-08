@@ -11,6 +11,6 @@ class Tranvia extends Model {
      *
      * @var string
      */
-    protected $table = 'tranvias';
+    protected $table = 'tranvia';
 
 }
