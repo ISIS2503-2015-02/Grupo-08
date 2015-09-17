@@ -35,11 +35,7 @@ class EstacionController extends BaseController {
         $input = $request->getContent();
         $json = json_decode($input);
 
-        $estacion = \App\Estacion::find($estacionId);
-
-        $estacion->disponibles = $estacion->disponibles+sizeof($json);
-
-        $estacion->save();
+        \App\Estacion::find($estacionId)->increment("disponibles", sizeof($json));
 
         return ["estado"=>"OK", "mensaje"=>"Se han recibido los VCUBs"];
     }
