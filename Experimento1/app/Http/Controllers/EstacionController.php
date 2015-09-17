@@ -14,27 +14,19 @@ class EstacionController extends BaseController {
     }
 
     public function pedirLlenado($estacionId) {
-        $estacion = \App\Estacion::find($estacionId);
-
-        $estacion->llenar = true;
-
-        $estacion->save();
+        \App\Estacion::where("id", $estacionId)->update(["llenar"=>true]);
 
         return ["estado"=>"OK", "mensaje"=>"Se ha solicitado el llenado"];
     }
 
     public function prestarVcub($estacionId, $vcubId) {
-        \App\Estacion::find($estacionId)->increment("disponibles");
+        \App\Estacion::find($estacionId)->decrement("disponibles");
 
         return ["estado"=>"OK", "mensaje"=>"Se ha prestado el VCUB $vcubId"];
     }
 
     public function recibirVcub($estacionId, $vcubId) {
-        $estacion = \App\Estacion::find($estacionId);
-
-        $estacion->disponibles = $estacion->disponibles+1;
-
-        $estacion->save();
+        \App\Estacion::find($estacionId)->increment("disponibles");
 
         return ["estado"=>"OK", "mensaje"=>"Se ha recibido el VCUB $vcubId"];
     }
