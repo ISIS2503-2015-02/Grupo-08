@@ -116,8 +116,6 @@ public class http
 		return Unirest.put(root+"tranvia/{id}/emergencia")
 				  .header("accept", "application/json")
 				  .routeParam("id", id)
-				  .field("lat", "4.601586")
-				  .field("long", "-74.065274")
 				  
 				  
 				  .asString().getBody();
@@ -126,10 +124,10 @@ public class http
 	public String tranviaReportarPosicion(String id) throws UnirestException
 	{
 		return Unirest.put(root+"tranvia/{id}/reportarPosicion")
-				  .header("accept", "application/json")
+				  .header("Content-Type", "application/json")
 				  .routeParam("id", id)
-				  .field("lat", "4.601586")
-				  .field("long", "-74.065274")
+				  
+				  .body("{\"parameter\":\"value\", \"posicion\":\"12.3,45.6\"}")
 				  .asString().getBody();
 	}
 	
@@ -161,8 +159,15 @@ public class http
 	public String mobibusReportarPosicion(String id) throws UnirestException
 	{
 		HttpResponse<String> jsonResponse = Unirest.put(root+"mobibus/{id}/reportarPosicion")
-				  .header("accept", "application/json")
+				  .header("Content-Type", "application/json")
+				  
 				  .routeParam("id", id)
+				  
+//				  .field("posicion", "12.3,45.6")
+				  .body("{\"parameter\":\"value\", \"posicion\":\"12.3,45.6\"}")
+				  
+				  
+				  
 				  .asString();
 		
 		return jsonResponse.getBody();

@@ -110,6 +110,7 @@ public class Index {
 				try 
 				{
 					String s =x.mobibusReportarPosicion(mobibusId);
+					System.out.println(s);
 					
 					JOptionPane.showMessageDialog( frame, s, "Reportar Posicion", JOptionPane.INFORMATION_MESSAGE );
 				} catch (UnirestException e) {
