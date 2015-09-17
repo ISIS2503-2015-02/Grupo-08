@@ -24,15 +24,7 @@ class EstacionController extends BaseController {
     }
 
     public function prestarVcub($estacionId, $vcubId) {
-        $estacion = \App\Estacion::find($estacionId);
-
-        $estacion->disponibles = $estacion->disponibles-1;
-
-        if($estacion->disponibles < $estacion->max*0.1) {
-            $estacion->llenar = true;
-        }
-
-        $estacion->save();
+        \App\Estacion::find($estacionId)->increment("disponibles");
 
         return ["estado"=>"OK", "mensaje"=>"Se ha prestado el VCUB $vcubId"];
     }
