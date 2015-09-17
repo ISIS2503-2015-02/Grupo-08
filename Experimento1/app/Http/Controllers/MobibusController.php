@@ -25,7 +25,7 @@ class MobibusController extends BaseController
     public function reportarOcupacion(Request $request, $id) {
         $input = json_decode($request->getContent(), true);
         $mobibus = \App\Mobibus::find($id);
-        $mobibus->posicion = $input["ocupacion"];
+        $mobibus->ocupacion = $input["ocupacion"];
         $mobibus->save();
 
         return ["estado"=>"OK","mensaje"=>"Se ha actualizado la ocupación del mobibus"];
