@@ -47,6 +47,7 @@ public class http
 				  .asString();
 		
 		System.out.println(jsonResponse.getBody());
+		System.out.println(jsonResponse.getStatusText());
 		return jsonResponse.getBody();
 	}
 
@@ -70,7 +71,7 @@ public class http
 	{
 		System.out.println("pedir llenado");
 		
-		HttpResponse<String> jsonResponse = Unirest.post(root+"estacion/{EstacionId}/pedirLlenado")
+		HttpResponse<String> jsonResponse = Unirest.put(root+"estacion/{EstacionId}/pedirLlenado")
 				  .header("accept", "application/json")
 				  .routeParam("EstacionId", estacionId)
 				  .asString();
@@ -112,19 +113,19 @@ public class http
 
 	public String tranviaReportarEmergencia(String id) throws UnirestException
 	{
-		return Unirest.post(root+"tranvia/{id}/emergencia")
+		return Unirest.put(root+"tranvia/{id}/emergencia")
 				  .header("accept", "application/json")
-				  
 				  .routeParam("id", id)
-				  
 				  .field("lat", "4.601586")
 				  .field("long", "-74.065274")
+				  
+				  
 				  .asString().getBody();
 	}
 	
 	public String tranviaReportarPosicion(String id) throws UnirestException
 	{
-		return Unirest.post(root+"tranvia/{id}/reportarPosicion")
+		return Unirest.put(root+"tranvia/{id}/reportarPosicion")
 				  .header("accept", "application/json")
 				  .routeParam("id", id)
 				  .field("lat", "4.601586")
@@ -149,7 +150,7 @@ public class http
 
 	public String mobibusreportarOcupacion(String id) throws UnirestException
 	{
-		HttpResponse<String> jsonResponse = Unirest.post(root+"mobibus/{id}/ocupacion")
+		HttpResponse<String> jsonResponse = Unirest.put(root+"mobibus/{id}/ocupacion")
 				  .header("accept", "application/json")
 				  .routeParam("id", id)
 				  .asString();
@@ -159,7 +160,7 @@ public class http
 	
 	public String mobibusReportarPosicion(String id) throws UnirestException
 	{
-		HttpResponse<String> jsonResponse = Unirest.post(root+"mobibus/{id}/reportarPosicion")
+		HttpResponse<String> jsonResponse = Unirest.put(root+"mobibus/{id}/reportarPosicion")
 				  .header("accept", "application/json")
 				  .routeParam("id", id)
 				  .asString();

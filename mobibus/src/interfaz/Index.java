@@ -100,7 +100,7 @@ public class Index {
 		
 		JLabel lblId_1 = new JLabel("ID:");
 		
-		mobibusId = "007";
+		mobibusId = "1";
 		lblMobibusidlabel = new JLabel(mobibusId);
 		
 		JButton btnReportarPosicion_1 = new JButton("Reportar posicion");
@@ -242,7 +242,7 @@ public class Index {
 		});
 		
 		JLabel lblId = new JLabel("ID:");
-		estacionId = "007";
+		estacionId = "1";
 		estacionIdLabel = new JLabel(estacionId);
 		GroupLayout gl_estacionPanel = new GroupLayout(estacionPanel);
 		gl_estacionPanel.setHorizontalGroup(
@@ -291,7 +291,7 @@ public class Index {
 		
 		JLabel lblId_2 = new JLabel("ID:");
 		
-		tranviaId = "007";
+		tranviaId = "1";
 		lblTranviaid = new JLabel(tranviaId);
 		
 		JButton btnReportarEmergencia = new JButton("Reportar Emergencia");
@@ -300,6 +300,7 @@ public class Index {
 			{
 				try {
 					String s =x.tranviaReportarEmergencia(tranviaId);
+					System.out.println(s);
 					
 					JOptionPane.showMessageDialog( frame, s, "Reportar Emergencia", JOptionPane.INFORMATION_MESSAGE );
 				} catch (UnirestException e) {

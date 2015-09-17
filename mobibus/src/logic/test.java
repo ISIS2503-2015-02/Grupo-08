@@ -9,12 +9,14 @@ public class test {
 
 	public static void main(String[] args) throws UnirestException 
 	{
-		HttpResponse<String> jsonResponse = Unirest.get("https://www.google.com.co/#safe=off&q=david")
-				  .header("accept", "application/json")
-				  .queryString("apiKey", "123")
+		HttpResponse<String> jsonResponse = Unirest.put("http://exp1.diegorbaquero.com/estacion/1/pedirLlenado")
+				  .header("Content-Type", "application/json")
+
+
 				  .asString();
 		
-		System.out.println(jsonResponse.getStatus());
+		System.out.println(jsonResponse.getBody());
+		System.out.println(jsonResponse.getStatusText());
 
 	}
 
