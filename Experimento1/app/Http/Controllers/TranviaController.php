@@ -18,7 +18,8 @@ class TranviaController extends Controller
     {
         $input = json_decode($request->getContent(), true);
         $tranvia = \App\Tranvia::find($id);
-        $tranvia->posicion = $input["posicion"];
+        $tranvia->latitud = $input["lat"];
+        $tranvia->longitud = $input["long"];
         $tranvia->save();
 
         return ["estado"=>"OK","mensaje"=>"Se ha actualizado la posición del tranvia"];
