@@ -6,6 +6,8 @@ use Laravel\Lumen\Routing\Controller as BaseController;
 
 use Illuminate\Http\Request;
 
+use Carbon\Carbon;
+
 class MobibusController extends BaseController
 {
     public function showInformacion($id) {
@@ -30,6 +32,6 @@ class MobibusController extends BaseController
         $mobibus->ocupacion = $input["ocupacion"];
         $mobibus->save();
 
-        return ["estado"=>"OK","mensaje"=>"Se ha actualizado la ocupación del mobibus"];
+        return ["estado"=>"OK","mensaje"=>"Se ha actualizado la ocupación del mobibus $id"];
     }
 }
