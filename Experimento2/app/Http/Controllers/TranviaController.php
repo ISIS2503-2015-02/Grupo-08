@@ -8,14 +8,17 @@ use Illuminate\Http\Request;
 class TranviaController extends Controller
 {
 
-    public function showInfo ($id)
-    {
+    public function showAll() {
+        $tranvias = \App\Tranvia::all('id', 'tiempoSalida', 'tiempoLlegada', 'linea','longitud', 'latitud', 'emergencia');
+        return json_encode($tranvias);
+    }
+
+    public function showInfo ($id) {
         $tranvia = \App\Tranvia::find($id);
         return json_encode($tranvia);
     }
 
-    public function reportarPosicion (Request $request, $id)
-    {
+    public function reportarPosicion (Request $request, $id) {
         $input = json_decode($request->getContent(), true);
         $tranvia = \App\Tranvia::find($id);
         $vars = explode(",", $input["posicion"]);
@@ -26,8 +29,8 @@ class TranviaController extends Controller
         return ["estado"=>"OK","mensaje"=>"Se ha actualizado la posición del tranvia"];
     }
 
-    public function reportarEmergencia ($id)
-    {
+    public function reportarEmergencia (Request $request, $id) {
+        $input = json_decode($request->getContent(), true);
         $tranvia = \App\Tranvia::find($id);
         $tranvia->emergencia = true;
         $tranvia->save();
