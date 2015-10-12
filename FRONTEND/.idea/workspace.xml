@@ -33,26 +33,26 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$USER_HOME$/Desktop/Grupo-08/FRONTEND/pages/combinedMap.html" />
-        <option value="$USER_HOME$/Desktop/Grupo-08/FRONTEND/bower.json" />
-        <option value="$USER_HOME$/Desktop/Grupo-08/FRONTEND/pages/flot.html" />
-        <option value="$USER_HOME$/Desktop/Grupo-08/FRONTEND/dist/js/sb-admin-2.js" />
-        <option value="$USER_HOME$/Desktop/Grupo-08/FRONTEND/partials/combinedMap.html" />
-        <option value="$USER_HOME$/Desktop/Grupo-08/FRONTEND/controllers/mainController.js" />
-        <option value="$USER_HOME$/Desktop/Grupo-08/FRONTEND/partials/nav.html" />
-        <option value="$USER_HOME$/Desktop/Grupo-08/FRONTEND/js/morris-data.js" />
-        <option value="$USER_HOME$/Desktop/Grupo-08/FRONTEND/pages/index.html" />
-        <option value="$USER_HOME$/Desktop/Grupo-08/FRONTEND/partials/tranvia-status.html" />
-        <option value="$USER_HOME$/Desktop/Grupo-08/FRONTEND/partials/mobibus-status.html" />
-        <option value="$USER_HOME$/Desktop/Grupo-08/FRONTEND/partials/vcubs-status.html" />
-        <option value="$USER_HOME$/Desktop/Grupo-08/FRONTEND/partials/Conductores/conductores-mobibus.html" />
-        <option value="$USER_HOME$/Desktop/Grupo-08/FRONTEND/partials/Conductores/conductores-tranvia.html" />
-        <option value="$USER_HOME$/Desktop/Grupo-08/FRONTEND/dist/css/sb-admin-2.css" />
-        <option value="$USER_HOME$/Desktop/Grupo-08/FRONTEND/partials/main-page.html" />
-        <option value="$USER_HOME$/Desktop/Grupo-08/FRONTEND/partials/nav-up-side.html" />
-        <option value="$USER_HOME$/Desktop/Grupo-08/FRONTEND/controllers/app.js" />
-        <option value="$USER_HOME$/Desktop/Grupo-08/FRONTEND/partials/login-form.html" />
-        <option value="$USER_HOME$/Desktop/Grupo-08/FRONTEND/index.html" />
+        <option value="$PROJECT_DIR$/pages/combinedMap.html" />
+        <option value="$PROJECT_DIR$/bower.json" />
+        <option value="$PROJECT_DIR$/pages/flot.html" />
+        <option value="$PROJECT_DIR$/dist/js/sb-admin-2.js" />
+        <option value="$PROJECT_DIR$/partials/combinedMap.html" />
+        <option value="$PROJECT_DIR$/controllers/mainController.js" />
+        <option value="$PROJECT_DIR$/partials/nav.html" />
+        <option value="$PROJECT_DIR$/js/morris-data.js" />
+        <option value="$PROJECT_DIR$/pages/index.html" />
+        <option value="$PROJECT_DIR$/partials/tranvia-status.html" />
+        <option value="$PROJECT_DIR$/partials/mobibus-status.html" />
+        <option value="$PROJECT_DIR$/partials/vcubs-status.html" />
+        <option value="$PROJECT_DIR$/partials/Conductores/conductores-mobibus.html" />
+        <option value="$PROJECT_DIR$/partials/Conductores/conductores-tranvia.html" />
+        <option value="$PROJECT_DIR$/dist/css/sb-admin-2.css" />
+        <option value="$PROJECT_DIR$/partials/main-page.html" />
+        <option value="$PROJECT_DIR$/partials/nav-up-side.html" />
+        <option value="$PROJECT_DIR$/controllers/app.js" />
+        <option value="$PROJECT_DIR$/partials/login-form.html" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -91,15 +91,22 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FRONTEND" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane />
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Grupo-08/FRONTEND" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Experimento1/public/FRONTEND" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
@@ -110,8 +117,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$USER_HOME$/Desktop/Grupo-08/FRONTEND/partials/Status" />
-      <recent name="$USER_HOME$/Desktop/Grupo-08/FRONTEND/partials" />
+      <recent name="$PROJECT_DIR$/partials/Status" />
+      <recent name="$PROJECT_DIR$/partials" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html (1)">
@@ -184,16 +191,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="873" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="873" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18181819" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18181819" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298647" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -201,7 +206,9 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
