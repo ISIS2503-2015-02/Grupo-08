@@ -32,7 +32,7 @@ $app->group(['prefix' => 'estacion/{estacionId}', 'namespace'=> 'App\Http\Contro
 
 $app->group(['prefix' => 'tranvia/{id}', 'namespace'=> 'App\Http\Controllers'], function ($app) {
     $app->get('/', 'TranviaController@showInfo');
-    $app->put('emergencia', 'TranviaController@reportarEmergencia');
+    $app->post('emergencia', 'TranviaController@reportarEmergencia');
     $app->put('reportarPosicion', 'TranviaController@reportarPosicion');
 });
 

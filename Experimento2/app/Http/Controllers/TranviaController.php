@@ -31,11 +31,18 @@ class TranviaController extends Controller
 
     public function reportarEmergencia (Request $request, $id) {
         $input = json_decode($request->getContent(), true);
+        $gravedad = $input['nivel'];
+
+        $accidente = new \App\Accidente;
+        $accidente->id_tranvia = $id;
+        $accidente->nivel = $gravedad;
+        $accidente->save();
+
         $tranvia = \App\Tranvia::find($id);
         $tranvia->emergencia = true;
         $tranvia->save();
 
-        return ["estado"=>"OK","mensaje"=>"Se ha reportado la emergencia"];
+        return ["estado"=>"OK","mensaje"=>"Se ha reportado la emergencia del tranvía $id con gravedad $gravedad"];
     }
 
 }
