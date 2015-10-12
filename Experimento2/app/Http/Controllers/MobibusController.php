@@ -21,7 +21,7 @@ class MobibusController extends BaseController
         $mobibus->longitud = $vars[1];
         $mobibus->save();
 
-        return ["estado"=>"OK","mensaje"=>"Se ha actualizado la posición del mobibus"];
+        return ["estado"=>"OK","mensaje"=>"Se ha actualizado la posición del mobibus $id"];
     }
 
     public function reportarOcupacion(Request $request, $id) {
