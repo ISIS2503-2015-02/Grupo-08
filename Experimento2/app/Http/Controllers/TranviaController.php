@@ -5,8 +5,12 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 
-class TranviaController extends Controller
-{
+class TranviaController extends Controller {
+
+    public function count() {
+        $tranvias = \App\Tranvia::where("emergencia", 0)->count();
+        return $tranvias;
+    }
 
     public function showAll() {
         $tranvias = \App\Tranvia::all('id', 'tiempoSalida', 'tiempoLlegada', 'linea','longitud', 'latitud', 'emergencia');

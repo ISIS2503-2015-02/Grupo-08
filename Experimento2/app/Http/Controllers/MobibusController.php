@@ -10,6 +10,11 @@ use Carbon\Carbon;
 
 class MobibusController extends BaseController {
 
+    public function count() {
+        $mobibuses = \App\Mobibus::where("estado", "disponible")->count();
+        return $mobibuses;
+    }
+
     public function showAll() {
         $mobibuses = \App\Mobibus::all('id', 'fechaReserva', 'longitud', 'latitud', 'estado');
         return json_encode($mobibuses);

@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 
 class EstacionController extends BaseController {
 
+    public function count() {
+        $estaciones = \App\Estacion::all('disponibles')->sum('disponibles');
+        return $estaciones;
+    }
+
+    public function showAll() {
+        $estaciones = \App\Estacion::all('id', 'max', 'disponibles', 'llenar', 'ubicacion');
+        return json_encode($estaciones);
+    }
+
     public function showInfo ($estacionId) {
         $estacion = \App\Estacion::find($estacionId);
         return json_encode($estacion);
