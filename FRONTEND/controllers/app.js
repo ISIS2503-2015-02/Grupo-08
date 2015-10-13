@@ -115,19 +115,19 @@ var tbc = angular.module('tbc', ['ngRoute']);
         };
 
         $scope.getTranviasFuncionando=function(){
-            $http.get('http://exp2.diegorbaquero.com/tranvia/cuenta').success(function(data,header){
+            $http.get('http://exp2.diegorbaquero.com/tranviaCuenta').success(function(data,header){
                 $scope.cantTranvias=data;
             });
         };
 
         $scope.getMobibusesFuncionando=function(){
-            $http.get('http://exp2.diegorbaquero.com/mobibus/cuenta').success(function(data,header){
+            $http.get('http://exp2.diegorbaquero.com/mobibusCuenta').success(function(data,header){
                 $scope.cantMobibus=data;
             });
         };
 
         $scope.getVcubsFuncionando=function(){
-            $http.get('http://exp2.diegorbaquero.com/estacion/cuenta').success(function(data,header){
+            $http.get('http://exp2.diegorbaquero.com/estacionCuenta').success(function(data,header){
                 $scope.cantVCubs=data;
             });
         };
