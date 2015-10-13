@@ -62,11 +62,10 @@
 <!-- Custom Theme JavaScript -->
 <script src="dist/js/sb-admin-2.js"></script>
 
-
-<script src="controllers/app.js"></script>
-
 <script src='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.js'></script>
 <link href='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.css' rel='stylesheet' />
+
+<script src="controllers/app.js"></script>
 
 <div id="wrapper" ng-controller="appCtrl">
 
@@ -357,7 +356,7 @@
                                 <i class="fa fa-car fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">26</div>
+                                <div class="huge">{{cantTranvias}}</div>
                                 <div>Tranvias en Recorrido</div>
                             </div>
                         </div>
@@ -379,7 +378,7 @@
                                 <i class="fa fa-bus fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">13</div>
+                                <div class="huge">{{cantMobibus}}</div>
                                 <div>Mobibuses en recorrido</div>
                             </div>
                         </div>
@@ -401,8 +400,8 @@
                                 <i class="fa fa-bicycle fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">13</div>
-                                <div>Estaciones de VCUBs Funcionando</div>
+                                <div class="huge">{{cantVCubs}}</div>
+                                <div>VCUBs Disponibles</div>
                             </div>
                         </div>
                     </div>
@@ -424,12 +423,10 @@
                     <div class="panel-heading">
                         <i class="fa fa-location-arrow fa-fw"></i> Rutas Actuales de Mobibus y de Tranvia
                     </div>
-                        <div class="panel-body">
-                            <div id="map" style="position:absolute; top:0; bottom:0; width:500px; height:500px ">
-
-                            </div>
-                        </div>
+                    <div class="panel-body" style="text-align: center">
+                        <div id="map" style=" top:0; bottom:0;  height:800px "></div>
                     </div>
+                </div>
             </div>
 
             <div class="col-lg-4">
@@ -688,15 +685,8 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr class="success">
-                                    <td>1</td>
-                                    <td>7:00</td>
-                                    <td>16:00</td>
-                                    <td>C</td>
-                                    <td>74.955454545, 72.3432425</td>
-                                </tr>
-                                <tr ng-repeat="tranvia in tranvias | limitTo: 30" 
-                                ng-class="{success: tranvia.emergencia=='1', danger: tranvia.emergencia=='0'}">
+
+                                <tr ng-repeat="tranvia in tranvias | limitTo: 15" ng-class="{success: tranvia.emergencia=='1', danger: tranvia.emergencia=='0'}">
                                     <td>{{tranvia.id}}</td>
                                     <td>{{tranvia.tiempoSalida}}</td>
                                     <td>{{tranvia.tiempoLlegada}}</td>
