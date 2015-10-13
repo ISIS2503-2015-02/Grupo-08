@@ -82,7 +82,6 @@ var tbc = angular.module('tbc', ['ngRoute']);
                 var myLayer = L.mapbox.featureLayer().addTo(map);
                 var features = [];
                 angular.forEach($scope.mobibuses, function(value, key) {
-                    console.log(value.id + " " + value.latitud + " " + value.longitud);
                     features.push({
                         type: 'Feature',
                         geometry: {

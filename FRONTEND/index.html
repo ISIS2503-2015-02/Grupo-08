@@ -673,23 +673,17 @@
                                         <th>Nombre de Estacion</th>
                                         <th>Capacidad Máxima</th>
                                         <th>Disponibles</th>
-                                        <th>Ubicacion de la Estacion</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Modelia</td>
-                                    <td>50</td>
-                                    <td>49</td>
-                                    <td>74.955454545, 72.3432425</td>
-                                </tr>
-                                <tr ng-repeat="vcub in vcubs | limitTo:15" ng-class="{}">
+
+                                <tr ng-repeat="vcub in vcubs | limitTo:15" ng-class="{warning: vcub.llenar=='1'}">
                                     <td>{{vcub.id}}</td>
-                                    <td>{{vcub.id}}</td>
+                                    <td>{{vcub.ubicacion}}</td>
                                     <td>{{vcub.max}}</td>
                                     <td>{{vcub.disponibles}}</td>
-                                    <td>{{vcub.ubicacion}}</td>
+                                    
                                 </tr>
 
                                 </tbody>
