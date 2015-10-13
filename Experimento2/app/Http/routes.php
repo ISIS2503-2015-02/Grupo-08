@@ -16,6 +16,7 @@ $app->get('/', function () use ($app) {
 });
 
 $app->get('/tranvia', 'TranviaController@showAll');
+$app->get('/mobibus', 'MobibusController@showAll');
 
 $app->group(['prefix' => 'usuario/{usuarioId}', 'namespace'=>'App\Http\Controllers'], function ($app) {
     $app->get('verEstado/{id}','UsuarioController@verEstado');

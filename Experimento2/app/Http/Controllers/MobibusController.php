@@ -8,8 +8,13 @@ use Illuminate\Http\Request;
 
 use Carbon\Carbon;
 
-class MobibusController extends BaseController
-{
+class MobibusController extends BaseController {
+
+    public function showAll() {
+        $mobibuses = \App\Mobibus::all('id', 'fechaReserva', 'longitud', 'latitud', 'estado');
+        return json_encode($mobibuses);
+    }
+
     public function showInformacion($id) {
         $mobibus = \App\Mobibus::find($id);
         return json_encode($mobibus);
