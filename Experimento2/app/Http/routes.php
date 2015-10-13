@@ -1,5 +1,7 @@
 <?php
 
+use Carbon\Carbon;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -16,11 +18,11 @@ $app->get('/', function () use ($app) {
 });
 
 $app->get('/tranvia', 'TranviaController@showAll');
-$app->get('/tranvia/cuenta', 'TranviaController@count');
+$app->get('/tranviaCuenta', 'TranviaController@count');
 $app->get('/mobibus', 'MobibusController@showAll');
-$app->get('/mobibus/cuenta', 'MobibusController@count');
+$app->get('/mobibusCuenta', 'MobibusController@count');
 $app->get('/estacion', 'EstacionController@showAll');
-$app->get('/estacion/cuenta', 'EstacionController@count');
+$app->get('/estacionCuenta', 'EstacionController@count');
 
 $app->group(['prefix' => 'usuario/{usuarioId}', 'namespace'=>'App\Http\Controllers'], function ($app) {
     $app->get('verEstado/{id}','UsuarioController@verEstado');
