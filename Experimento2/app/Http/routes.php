@@ -17,6 +17,14 @@ $app->get('/', function () use ($app) {
     return $app->welcome();
 });
 
+$app->post('/login', function() {
+    if(array_key_exists("user", $_POST) && array_key_exists("password", $_POST) && $_POST["user"] =="admin" && $_POST["password"] == "123$") {
+        echo "true";
+    } else {
+        echo "false";
+    }
+});
+
 $app->get('/tranvia', 'TranviaController@showAll');
 $app->get('/tranviaCuenta', 'TranviaController@count');
 $app->get('/mobibus', 'MobibusController@showAll');
