@@ -423,8 +423,8 @@
                     <div class="panel-heading">
                         <i class="fa fa-location-arrow fa-fw"></i> Rutas Actuales de Mobibus y de Tranvia
                     </div>
-                    <div class="panel-body" style="text-align: center">
-                        <div id="map" style=" top:0; bottom:0;  height:800px "></div>
+                    <div class="panel-body">
+                        <div id="map" style=" top:0; bottom:0; width:500px; height:500px "></div>
                     </div>
                 </div>
             </div>
@@ -598,18 +598,64 @@
                                 <thead>
                                 <tr>
                                     <th>Id Bus</th>
+                                    <th>Conductor asignado</th>
+                                    <th>Ultima Ubicacion</th>
                                     <th>Fecha Reserva</th>
-                                    <th>Ultima Ubicación</th>
+                                    <th>Ruta</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-
-                                <tr ng-repeat="mobibus in mobibuses | limitTo:15" ng-class="{success: mobibus.estado=='disponible', warning: mobibus.estado=='ocupado'}">
-                                    <td>{{mobibus.id}}</td>
-                                    <td>{{mobibus.fechaReserva}}</td>
-                                    <td>{{mobibus.longitud}}, {{mobibus.latitud}}</td>
+                                <tr class="success">
+                                    <td>1</td>
+                                    <td>Sebastian</td>
+                                    <td>74.955454545, 72.3432425</td>
+                                    <td>1/2/2015</td>
+                                    <td>Norte</td>
+                                </tr>
+                                <tr class="warning">
+                                    <td>1</td>
+                                    <td>Carlos</td>
+                                    <td>74.955454545, 72.3432425</td>
+                                    <td>1/2/2015</td>
+                                    <td>Usaquen</td>
+                                </tr>
+                                <tr class="success">
+                                    <td>1</td>
+                                    <td>Juan</td>
+                                    <td>74.955454545, 72.3432425</td>
+                                    <td>2/2/2015</td>
+                                    <td>Chapinero</td>
                                 </tr>
 
+                                <tr class="warning">
+                                    <td>1</td>
+                                    <td>Hector</td>
+                                    <td>74.955454545, 72.3432425</td>
+                                    <td>14/2/2015</td>
+                                    <td>Ciudad Bolivar</td>
+                                </tr>
+
+                                <tr class="warning">
+                                    <td>1</td>
+                                    <td>Alberto</td>
+                                    <td>74.955454545, 72.3432425</td>
+                                    <td>12/2/2015</td>
+                                    <td>Septima</td>
+                                </tr>
+                                <tr class="warning">
+                                    <td>1</td>
+                                    <td>Sebastian</td>
+                                    <td>74.955454545, 72.3432425</td>
+                                    <td>12/2/2015</td>
+                                    <td>Modelia</td>
+                                </tr>
+                                <tr class="danger">
+                                    <td>1</td>
+                                    <td>Sebastian</td>
+                                    <td>74.955454545, 72.3432425</td>
+                                    <td>12/10/2015</td>
+                                    <td>Suba</td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -668,24 +714,36 @@
                         <div class="table-responsive">
                             <table class="table table-hover">
                                 <thead>
-                                    <tr>
-                                        <th>Id</th>
-                                        <th>Nombre de Estacion</th>
-                                        <th>Capacidad Máxima</th>
-                                        <th>Disponibles</th>
-
-                                    </tr>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Nombre de Estacion</th>
+                                    <th>Capacidad</th>
+                                    <th>Disponibles</th>
+                                    <th>Ubicacion de la Estacion</th>
+                                </tr>
                                 </thead>
                                 <tbody>
-
-                                <tr ng-repeat="vcub in vcubs | limitTo:15" ng-class="{warning: vcub.llenar=='1'}">
-                                    <td>{{vcub.id}}</td>
-                                    <td>{{vcub.ubicacion}}</td>
-                                    <td>{{vcub.max}}</td>
-                                    <td>{{vcub.disponibles}}</td>
-                                    
+                                <tr>
+                                    <td>1</td>
+                                    <td>Modelia</td>
+                                    <td>50</td>
+                                    <td>49</td>
+                                    <td>74.955454545, 72.3432425</td>
                                 </tr>
-
+                                <tr>
+                                    <td>2</td>
+                                    <td>Salitre</td>
+                                    <td>50</td>
+                                    <td>40</td>
+                                    <td>74.955454545, 72.3432425</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Uniandes</td>
+                                    <td>50</td>
+                                    <td>39</td>
+                                    <td>74.955454545, 72.3432425</td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>

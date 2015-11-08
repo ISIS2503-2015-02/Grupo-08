@@ -51,6 +51,7 @@ var tbc = angular.module('tbc', ['ngRoute']);
                 var myLayer = L.mapbox.featureLayer().addTo(map);
                 var features = [];
                 angular.forEach($scope.tranvias, function(value, key) {
+                    console.log(value.id + " " + value.latitud + " " + value.longitud);
                     features.push({
                         type: 'Feature',
                         geometry: {
@@ -82,6 +83,7 @@ var tbc = angular.module('tbc', ['ngRoute']);
                 var myLayer = L.mapbox.featureLayer().addTo(map);
                 var features = [];
                 angular.forEach($scope.mobibuses, function(value, key) {
+                    console.log(value.id + " " + value.latitud + " " + value.longitud);
                     features.push({
                         type: 'Feature',
                         geometry: {
@@ -114,19 +116,19 @@ var tbc = angular.module('tbc', ['ngRoute']);
         };
 
         $scope.getTranviasFuncionando=function(){
-            $http.get('http://exp2.diegorbaquero.com/tranviaCuenta').success(function(data,header){
+            $http.get('http://exp2.diegorbaquero.com/tranvia/cuenta').success(function(data,header){
                 $scope.cantTranvias=data;
             });
         };
 
         $scope.getMobibusesFuncionando=function(){
-            $http.get('http://exp2.diegorbaquero.com/mobibusCuenta').success(function(data,header){
+            $http.get('http://exp2.diegorbaquero.com/mobibus/cuenta').success(function(data,header){
                 $scope.cantMobibus=data;
             });
         };
 
         $scope.getVcubsFuncionando=function(){
-            $http.get('http://exp2.diegorbaquero.com/estacionCuenta').success(function(data,header){
+            $http.get('http://exp2.diegorbaquero.com/estacion/cuenta').success(function(data,header){
                 $scope.cantVCubs=data;
             });
         };
@@ -139,9 +141,6 @@ var tbc = angular.module('tbc', ['ngRoute']);
         $scope.getTranviasFuncionando();
         $scope.getMobibusesFuncionando();
         $scope.getVcubsFuncionando();
-
-        var modWidth=800;
-        $("#map").css('width', '100%');
     }]);
 
 //[{"id":"1","tiempoSalida":"2015-09-17 22:13:19","tiempoLlegada":"0000-00-00 00:00:00","linea":"B","longitud":"45.6","latitud":"12.3","emergencia":"1"}
