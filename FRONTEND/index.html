@@ -40,7 +40,7 @@
 <script src="bower_components/angular-route/angular-route.min.js"></script>
 
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -631,7 +631,7 @@
                                     </thead>
                                     <tbody>
 
-                                    <tr ng-repeat="mobibus in mobibuses | limitTo:15" ng-class="{success: mobibus.estado=='disponible', warning: mobibus.estado=='ocupado'}">
+                                    <tr ng-repeat="mobibus in filteredMobibuses | limitTo:15" ng-class="{success: mobibus.estado=='disponible', warning: mobibus.estado=='ocupado'}">
                                         <td>{{mobibus.id}}</td>
                                         <td>{{mobibus.fechaReserva}}</td>
                                         <td>{{mobibus.longitud}}, {{mobibus.latitud}}</td>
@@ -639,6 +639,12 @@
 
                                     </tbody>
                                 </table>
+                                <pagination
+                                        ng-model="currentPageMobibus"
+                                        total-items="mobibuses.length"
+                                        max-size="maxSize"
+                                        boundary-links="true">
+                                </pagination>
                             </div>
                             <!-- /.table-responsive -->
                         </div>
@@ -667,16 +673,22 @@
                                     </thead>
                                     <tbody>
 
-                                    <tr ng-repeat="tranvia in tranvias | limitTo: 15" ng-class="{success: tranvia.emergencia=='0', danger: tranvia.emergencia=='1'}">
+                                    <tr ng-repeat="tranvia in filteredTranvias | limitTo: 15" ng-class="{success: tranvia.emergencia=='0', danger: tranvia.emergencia=='1'}">
+
                                         <td>{{tranvia.id}}</td>
                                         <td>{{tranvia.tiempoSalida}}</td>
                                         <td>{{tranvia.tiempoLlegada}}</td>
                                         <td>{{tranvia.linea}}</td>
                                         <td>{{tranvia.longitud}}, {{tranvia.latitud}}</td>
                                     </tr>
-
                                     </tbody>
                                 </table>
+                                <pagination
+                                        ng-model="currentPageTranvia"
+                                        total-items="tranvias.length"
+                                        max-size="maxSize"
+                                        boundary-links="true">
+                                </pagination>
                             </div>
                             <!-- /.table-responsive -->
                         </div>
@@ -705,16 +717,20 @@
                                     </thead>
                                     <tbody>
 
-                                    <tr ng-repeat="vcub in vcubs | limitTo:15" ng-class="{warning: vcub.llenar=='1'}">
+                                    <tr ng-repeat="vcub in filteredVcubs | limitTo:15" ng-class="{warning: vcub.llenar=='1'}">
                                         <td>{{vcub.id}}</td>
                                         <td>{{vcub.ubicacion}}</td>
                                         <td>{{vcub.max}}</td>
                                         <td>{{vcub.disponibles}}</td>
-
                                     </tr>
-
                                     </tbody>
                                 </table>
+                                <pagination
+                                        ng-model="currentPageVCub"
+                                        total-items="vcubs.length"
+                                        max-size="maxSize"
+                                        boundary-links="true">
+                                </pagination>
                             </div>
                             <!-- /.table-responsive -->
                         </div>

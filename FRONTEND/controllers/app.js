@@ -3,7 +3,7 @@
  */
 
 
-var tbc = angular.module('tbc', ['ngRoute']);
+var tbc = angular.module('tbc', ['ngRoute','ui.bootstrap']);
 
 
     tbc.config(['$routeProvider', function ($routeProvider) {
@@ -38,6 +38,17 @@ var tbc = angular.module('tbc', ['ngRoute']);
         var map = L.mapbox.map('map', 'mapbox.streets').setView([4.69, -74.085], 13);
 
 
+
+
+
+
+
+
+
+
+
+
+
         $scope.getTranvias=function(){
             $http.get('https://exp2.diegorbaquero.com/tranvia').success(function(data,headers)
             {
@@ -61,6 +72,19 @@ var tbc = angular.module('tbc', ['ngRoute']);
 
         getTranviasFunction=function(data){
             $scope.tranvias=data;
+
+            $scope.filteredTranvias = []
+                ,$scope.currentPageTranvia = 1
+                ,$scope.numPerPage = 10
+                ,$scope.maxSize = 5;
+
+            $scope.$watch('currentPageTranvia + numPerPage', function() {
+                var begin = (($scope.currentPageTranvia - 1) * $scope.numPerPage)
+                    , end = begin + $scope.numPerPage;
+
+                $scope.filteredTranvias = $scope.tranvias.slice(begin, end);
+            });
+
             var myLayer = L.mapbox.featureLayer().addTo(map);
             var features = [];
             angular.forEach($scope.tranvias, function(value, key) {
@@ -90,6 +114,19 @@ var tbc = angular.module('tbc', ['ngRoute']);
 
         getMobibusFunction=function (data){
             $scope.mobibuses=data;
+
+            $scope.filteredMobibuses = []
+                ,$scope.currentPageMobibus = 1
+                ,$scope.numPerPage = 10
+                ,$scope.maxSize = 5;
+
+            $scope.$watch('currentPageMobibus + numPerPage', function() {
+                var begin = (($scope.currentPageMobibus - 1) * $scope.numPerPage)
+                    , end = begin + $scope.numPerPage;
+
+                $scope.filteredMobibuses = $scope.mobibuses.slice(begin, end);
+            });
+
             var myLayer = L.mapbox.featureLayer().addTo(map);
             var features = [];
             angular.forEach($scope.mobibuses, function(value, key) {
@@ -120,6 +157,20 @@ var tbc = angular.module('tbc', ['ngRoute']);
         $scope.getVCubs=function(){
             $http.get('https://exp2.diegorbaquero.com/estacion').success(function(data,headers){
                 $scope.vcubs=data;
+
+
+                $scope.filteredVcubs = []
+                    ,$scope.currentPageVCub = 1
+                    ,$scope.numPerPage = 10
+                    ,$scope.maxSize = 5;
+
+                $scope.$watch('currentPageVCub + numPerPage', function() {
+                    var begin = (($scope.currentPageVCub - 1) * $scope.numPerPage)
+                        , end = begin + $scope.numPerPage;
+
+                    $scope.filteredVcubs = $scope.vcubs.slice(begin, end);
+                });
+
             }).error(function(data, headers){
                 $http.get('https://exp2.diegorbaquero.com/estacion').success(function(data,headers){
                     $scope.vcubs=data;
@@ -132,7 +183,7 @@ var tbc = angular.module('tbc', ['ngRoute']);
                 $scope.cantTranvias=data;
             }).error(function(data, headers) {
                 $http.get('https://exp2.diegorbaquero.com/tranviaCuenta').success(function (data, headers) {
-                    $scope.vcubs = data;
+                    $scope.cantTranvias = data;
                 });
             });
         };
@@ -152,7 +203,7 @@ var tbc = angular.module('tbc', ['ngRoute']);
                 $scope.cantVCubs=data;
             }).error(function(data, headers) {
                 $http.get('https://exp2.diegorbaquero.com/estacionCuenta').success(function (data, headers) {
-                    $scope.vcubs = data;
+                    $scope.cantVCubs = data;
                 });
             });
         };
@@ -178,9 +229,12 @@ var tbc = angular.module('tbc', ['ngRoute']);
             }
             else{
                 $scope.logged=true;
-                console.log("sis");
             }
         };
+
+
+
+
 
 
 
